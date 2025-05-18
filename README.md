@@ -10,6 +10,43 @@
 - Member reviews and feedback
 - Guild leadership and structure representation
 
+## Project Structure
+- **guild**: Contains the core app for managing events, campaigns, reviews, and guild members.
+- **templates**: HTML templates for the frontend.
+- **static**: Static files such as images.
+- 
+## Admin Roles
+The admin plays a crucial role in managing the application and ensuring smooth operations. Below are the key responsibilities of the admin:
+
+1. **Event Management**:
+   - Create, update, and delete events.
+   - Upload images and set event details such as title, description, and date.
+
+2. **Guild Leadership Management**:
+   - Add, update, or remove guild leaders.
+   - Manage leader profiles, including their name, title, description, and image.
+
+3. **Campaign Management**:
+   - Create, update, and delete campaigns.
+   - Manage campaign details such as title, description, date, and associated images.
+
+4. **Member Management**:
+   - View and manage registered members.
+   - Access member details such as name, email, and join date.
+
+5. **Guild Activities**:
+   - Link activities to specific events.
+   - Manage activity details such as name, description, and date.
+
+6. **Review Moderation**:
+   - Monitor and manage user reviews.
+   - Delete inappropriate or offensive reviews.
+
+7. **General Administration**:
+   - Access the Django admin panel to oversee all models and data.
+   - Use search and filtering options to efficiently manage records.
+
+
 ## Installation
 Follow these steps to set up the project locally:
 
@@ -39,10 +76,7 @@ python manage.py runserver
 2. Open your browser and navigate to `http://127.0.0.1:8000/`.
 3. Sign up or log in to access features like viewing events, leaving reviews, and more.
 
-## Project Structure
-- **guild**: Contains the core app for managing events, campaigns, reviews, and guild members.
-- **templates**: HTML templates for the frontend.
-- **static**: Static files such as images.
+
 
 ## Contributing
 Contributions are welcome! To contribute:
