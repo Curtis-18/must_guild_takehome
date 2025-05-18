@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 
 
@@ -7,6 +8,12 @@ class Event(models.Model):
     description = models.TextField()
     date = models.DateField()
     image = models.ImageField(upload_to='event_images/', blank=True, null=True)
+
+    def clean(self):
+        if not self.title:
+            raise ValidationError("Event title cannot be empty.")
+        if not self.date:
+            raise ValidationError("Event date is required.")
 
     def __str__(self):
         return self.title
