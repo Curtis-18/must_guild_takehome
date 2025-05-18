@@ -6,17 +6,21 @@ class LoginForm(AuthenticationForm):
     username = forms.CharField(
         max_length=150,
         widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}),
+        error_messages={'required': 'Username is required.'}
     )
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
+        error_messages={'required': 'Password is required.'}
     )
 
 class SignupForm(forms.ModelForm):
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
+        error_messages={'required': 'Password is required.'}
     )
     confirm_password = forms.CharField(
         widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm Password'}),
+        error_messages={'required': 'Please confirm your password.'}
     )
 
     class Meta:
@@ -39,4 +43,5 @@ class ReviewForm(forms.Form):
             'placeholder': 'Write your review here...',
             'rows': 5,
         }),
+        error_messages={'required': 'Review content cannot be empty.'}
     )
