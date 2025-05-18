@@ -42,7 +42,7 @@ python manage.py runserver
 ## Project Structure
 - **guild**: Contains the core app for managing events, campaigns, reviews, and guild members.
 - **templates**: HTML templates for the frontend.
-- **static**: Static files such as CSS, JavaScript, and images.
+- **static**: Static files such as images.
 
 ## Contributing
 Contributions are welcome! To contribute:
@@ -56,5 +56,5 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ## Contact
 For any inquiries or support, please contact:
-- **Email**: [guild@must.ac.ug](mailto:guild@must.ac.ug)
+- **Email**: [18vicu@gmail.com](mailto:18vicu@gmail.com)
 - **Phone**: +256 751 890 911
