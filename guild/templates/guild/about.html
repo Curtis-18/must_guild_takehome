@@ -1,0 +1,520 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - MUST Students Guild{% endblock %}
+
+{% block content %}
+<style>
+    /* Hero Section */
+    .about-hero {
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        color: white;
+        text-align: center;
+        padding: 80px 20px;
+        border-radius: 20px;
+        margin-bottom: 40px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-hero h1 {
+        font-size: 2.8rem;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .about-hero p {
+        font-size: 1.2rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    /* About Content Section */
+    .about-content {
+        background: white;
+        padding: 40px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .about-content h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .about-content p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    /* University Section */
+    .university-section {
+        background: white;
+        padding: 40px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .university-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+
+    .university-section .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    .university-section .col {
+        flex: 1;
+        padding: 0 15px;
+        min-width: 300px;
+        margin-bottom: 30px;
+    }
+
+    .university-section .card {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 25px;
+        height: 100%;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .university-section .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .university-section h3 {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+    }
+
+    .university-section ul {
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+
+    .university-section li {
+        margin-bottom: 8px;
+        color: #555;
+    }
+
+    /* Guild Structure Section */
+    .structure-section {
+        background: #f9f9f9;
+        padding: 40px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        margin-bottom: 40px;
+    }
+
+    .structure-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+
+    .structure-section .leadership-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .structure-section .leadership-card {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+    }
+
+    .structure-section .leadership-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .structure-section .leadership-icon {
+        background: linear-gradient(135deg, #3498db, #2ecc71);
+        color: white;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        margin: 0 auto 15px;
+    }
+
+    .structure-section h3 {
+        font-size: 1.3rem;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+    .structure-section p {
+        color: #666;
+        font-size: 1rem;
+    }
+
+    /* Achievements Section */
+    .achievements-section {
+        background: white;
+        padding: 40px 20px;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+
+    .achievements-section h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 30px;
+        color: #2c3e50;
+    }
+
+    .achievements-section .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .achievements-section .timeline::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #3498db;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+        border-radius: 10px;
+    }
+
+    .achievements-section .container {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+    }
+
+    .achievements-section .left {
+        left: 0;
+    }
+
+    .achievements-section .right {
+        left: 50%;
+    }
+
+    .achievements-section .container::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -13px;
+        background-color: white;
+        border: 4px solid #3498db;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+    }
+
+    .achievements-section .left::after {
+        right: -13px;
+    }
+
+    .achievements-section .right::after {
+        left: -13px;
+    }
+
+    .achievements-section .content {
+        padding: 20px;
+        background-color: white;
+        position: relative;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievements-section .content h3 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    .achievements-section .content p {
+        color: #666;
+        margin-bottom: 0;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        text-align: center;
+        padding: 40px 20px;
+        background: #f9f9f9;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .contact-section p {
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .contact-section a {
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .contact-section a:hover {
+        text-decoration: underline;
+    }
+
+    .contact-section .social-links {
+        margin-top: 20px;
+    }
+
+    .contact-section .social-links a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 1.5rem;
+        color: #3498db;
+        transition: transform 0.3s;
+    }
+
+    .contact-section .social-links a:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 767px) {
+        .university-section .row {
+            flex-direction: column;
+        }
+        
+        .achievements-section .timeline::after {
+            left: 31px;
+        }
+        
+        .achievements-section .container {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        
+        .achievements-section .container.left {
+            left: 0%;
+        }
+        
+        .achievements-section .container.right {
+            left: 0%;
+        }
+        
+        .achievements-section .container.right::after,
+        .achievements-section .container.left::after {
+            left: 15px;
+        }
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="about-hero">
+    <h1>About MUST Students Guild</h1>
+    <p>
+        Empowering students at Mbarara University of Science and Technology to lead, innovate, and make a lasting impact on campus and beyond.
+    </p>
+</section>
+
+<!-- University Section -->
+<section class="university-section">
+    <h2>Mbarara University of Science and Technology</h2>
+    
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <h3>Our Legacy</h3>
+                <p>
+                    Established in 1989, Mbarara University of Science and Technology (MUST) is one of Uganda's premier public universities. Located in the beautiful southwestern town of Mbarara, the university has grown from humble beginnings to become a center of excellence in science, technology, innovation, and health sciences education in East Africa.
+                </p>
+                <p>
+                    The university was founded with a special mandate to address the regional and national shortages in medical personnel and advance technological innovations tailored to solving local challenges.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card">
+                <h3>Academic Excellence</h3>
+                <p>
+                    MUST is renowned for its world-class education across six faculties:
+                </p>
+                <ul>
+                    <li>Faculty of Medicine</li>
+                    <li>Faculty of Science</li>
+                    <li>Faculty of Computing and Informatics</li>
+                    <li>Faculty of Applied Sciences and Technology</li>
+                    <li>Faculty of Business and Management Sciences</li>
+                    <li>Faculty of Interdisciplinary Studies</li>
+                </ul>
+                <p>
+                    With over 4,000 students and distinguished faculty members, MUST continues to produce skilled graduates who contribute significantly to Uganda's development agenda.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col">
+            <div class="card">
+                <h3>Community Impact</h3>
+                <p>
+                    As part of its community service mission, MUST operates the Mbarara Regional Referral Hospital, providing essential healthcare services to the southwestern region while training medical students in real-world settings.
+                </p>
+                <p>
+                    The university prioritizes research and innovation in addressing local challenges, with numerous community outreach programs that directly impact surrounding communities through health initiatives, technological solutions, and environmental conservation projects.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content Section -->
+<section class="about-content">
+    <h2>The MUST Students Guild</h2>
+    <p>
+        The MUST Students Guild serves as the official representative body for all students at Mbarara University of Science and Technology. Founded alongside the university in 1989, the Guild has evolved into a powerful platform that advocates for student welfare, promotes academic excellence, and fosters leadership development.
+    </p>
+    <p>
+        Our vision is to create a vibrant student community where every voice matters and where students actively participate in shaping the future of their education and society. The Guild operates on principles of inclusivity, accountability, and innovation.
+    </p>
+    <p>
+        We organize various academic, cultural, sports, and social events throughout the academic year, including the annual MUST Cultural Gala, Science and Technology Exhibition, and Inter-Faculty Sports Tournament. These events provide opportunities for students to showcase their talents, exchange ideas, and build lasting connections.
+    </p>
+    <p>
+        The Guild also plays a crucial role in bridging the gap between students and university administration, ensuring that student concerns are addressed promptly and effectively. Through regular consultations and feedback mechanisms, we work collaboratively with university leadership to improve the overall student experience at MUST.
+    </p>
+</section>
+
+<!-- Guild Structure Section -->
+<section class="structure-section">
+    <h2>Guild Leadership Structure</h2>
+    <p>
+        The MUST Students Guild operates through a democratically elected leadership team that represents the diverse student body. Elections are held annually, allowing students to choose leaders who will champion their interests and concerns.
+    </p>
+    
+    <div class="leadership-grid">
+        <div class="leadership-card">
+            <div class="leadership-icon">👑</div>
+            <h3>Guild President</h3>
+            <p>The chief executive officer and principal spokesperson of the student body, responsible for overall guild leadership and external representation.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-icon">📝</div>
+            <h3>Guild Cabinet</h3>
+            <p>A team of ministers appointed by the Guild President to oversee specific areas including academics, welfare, sports, and culture.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-icon">⚖️</div>
+            <h3>Guild Parliament</h3>
+            <p>Comprised of elected representatives from each faculty and hall of residence, responsible for legislation and oversight.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-icon">🏛️</div>
+            <h3>Judiciary Committee</h3>
+            <p>Ensures that all guild activities adhere to the constitution and resolves disputes within the student community.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-icon">🎓</div>
+            <h3>Faculty Representatives</h3>
+            <p>Elected by students from each faculty to address discipline-specific concerns and facilitate communication.</p>
+        </div>
+        
+        <div class="leadership-card">
+            <div class="leadership-icon">🏠</div>
+            <h3>Hall Representatives</h3>
+            <p>Address welfare and living conditions of students in university residence halls and affiliated accommodations.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Achievements Section -->
+<section class="achievements-section">
+    <h2>Our Achievements</h2>
+    
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h3>2023</h3>
+                <p>Successfully advocated for expanded WiFi coverage across all academic buildings and student residences, enhancing digital learning capabilities.</p>
+            </div>
+        </div>
+        
+        <div class="container right">
+            <div class="content">
+                <h3>2022</h3>
+                <p>Launched the "MUST Innovate" program that has provided seed funding to over 15 student-led startups focusing on healthcare and agricultural technology solutions.</p>
+            </div>
+        </div>
+        
+        <div class="container left">
+            <div class="content">
+                <h3>2021</h3>
+                <p>Organized the first-ever Western Uganda Universities Science Conference, bringing together 500+ students from 12 institutions to showcase research projects.</p>
+            </div>
+        </div>
+        
+        <div class="container right">
+            <div class="content">
+                <h3>2020</h3>
+                <p>Established the MUST Community Health Outreach initiative, which has since provided basic healthcare services to over 5,000 residents in surrounding communities.</p>
+            </div>
+        </div>
+        
+        <div class="container left">
+            <div class="content">
+                <h3>2019</h3>
+                <p>Successfully negotiated for improved student accommodation facilities, resulting in the construction of two new residence halls with modern amenities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <h2>Contact the MUST Students Guild</h2>
+    <p>Physical Address: MUST Main Campus, Guild Offices, Mbarara, Uganda</p>
+    <p>Email: <a href="mailto:guild@must.ac.ug">guild@must.ac.ug</a> | <a href="mailto:18vicu@gmail.com">18vicu@gmail.com</a></p>
+    <p>Phone: +256 751 890 911</p>
+    
+    <div class="social-links">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+</section>
+{% endblock %}

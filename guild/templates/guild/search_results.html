@@ -1,0 +1,23 @@
+<!-- filepath: /home/curtis_vyctr/Desktop/Assignment/students_guild/guild/templates/guild/search_results.html -->
+{% extends 'base.html' %}
+
+{% block title %}Search Results{% endblock %}
+
+{% block content %}
+<h1>Search Results</h1>
+
+{% if query %}
+    <p>Results for "{{ query }}":</p>
+    {% if results %}
+        <ul>
+            {% for result in results %}
+                <li>{{ result.name }} - {{ result.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No results found.</p>
+    {% endif %}
+{% else %}
+    <p>Please enter a search query.</p>
+{% endif %}
+{% endblock %}
