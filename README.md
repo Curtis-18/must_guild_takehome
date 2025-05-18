@@ -14,7 +14,7 @@
 - **guild**: Contains the core app for managing events, campaigns, reviews, and guild members.
 - **templates**: HTML templates for the frontend.
 - **static**: Static files such as images.
-- 
+
 ## Admin Roles
 The admin plays a crucial role in managing the application and ensuring smooth operations. Below are the key responsibilities of the admin:
 
@@ -76,7 +76,24 @@ python manage.py runserver
 2. Open your browser and navigate to `http://127.0.0.1:8000/`.
 3. Sign up or log in to access features like viewing events, leaving reviews, and more.
 
+## Implementation Details
 
+### Data Validation and Error Handling
+- **Forms**: Django forms are used for user input validation. For example, the `SignupForm` ensures that passwords match and fields are not empty.
+- **Models**: Custom validation is implemented in models using the `clean` method, such as ensuring event titles and dates are not empty.
+- **Error Handling**: Views include `try-except` blocks to catch and handle exceptions gracefully, displaying user-friendly error messages using Django's `messages` framework.
+
+### Design and Styling
+- **Frontend Framework**: The project uses Bootstrap for responsive design and consistent styling across pages.
+- **Custom CSS**: Additional custom styles are applied for branding and unique design elements, such as gradients and hover effects.
+- **Templates**: Django templates are used to structure HTML pages, ensuring reusability and maintainability.
+- **User Experience**: Forms and buttons are styled for clarity and ease of use, with error messages displayed prominently.
+
+### Code Quality and Project Structure
+- **Project Structure**: The project follows Django's recommended structure, separating concerns into apps, templates, and static files.
+- **Code Quality**: Adheres to PEP 8 standards for Python code. Admin classes, models, and views are modular and well-documented.
+- **Reusability**: Common components like headers, footers, and navigation bars are included in a base template.
+- **Testing**: The `tests.py` file is available for writing unit tests to ensure code reliability and correctness.
 
 ## Contributing
 Contributions are welcome! To contribute:
