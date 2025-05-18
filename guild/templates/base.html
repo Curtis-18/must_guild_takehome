@@ -314,17 +314,42 @@
     {% block extra_js %}{% endblock %}
 
     <!-- Footer -->
+       <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
-                <div class="col">
+                <!-- Quick Links Section -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'events' %}">Events</a></li>
+                        <li><a href="{% url 'about' %}">About Us</a></li>
+                        <li><a href="{% url 'get_involved' %}">Get Involved</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information Section -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: <a href="mailto:guild@must.ac.ug">guild@must.ac.ug</a></p>
+                    <p>Phone: +256 751 890 911</p>
+                    <p>Address: MUST Main Campus, Guild Offices, Mbarara, Uganda</p>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
                     <div class="social-icons">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i> Facebook</a><br>
+                        <a href="#"><i class="bi bi-twitter"></i> Twitter</a><br>
+                        <a href="#"><i class="bi bi-instagram"></i> Instagram</a><br>
+                        <a href="#"><i class="bi bi-linkedin"></i> LinkedIn</a>
                     </div>
                 </div>
             </div>
+
+            <hr class="my-4">
             <p class="text-center mt-3">© {{ now|date:"Y" }} Students Guild. All rights reserved.</p>
         </div>
     </footer>
