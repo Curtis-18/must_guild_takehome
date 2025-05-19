@@ -1,0 +1,125 @@
+/* Extracted from events.html */
+h1, h3 {
+  text-align: center;
+  margin-top: 20px;
+  color: #1d3557;
+}
+.events-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.event-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.event-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.event-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.event-details {
+  padding: 15px;
+  text-align: center;
+}
+.event-details h3 {
+  margin-bottom: 10px;
+  color: #457b9d;
+  font-size: 1.2rem;
+}
+.event-details p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+}
+.campaigns-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+.campaign-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  height: 150px;
+  margin: 0 auto;
+}
+.campaign-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.campaign-image {
+  width: 200px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.campaign-info h4 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #1d3557;
+}
+.campaign-info p {
+  margin: 5px 0;
+  color: #6c757d;
+}
+.campaign-info small {
+  color: #adb5bd;
+}
+.leaders-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+.leader-card {
+  background: linear-gradient(145deg, #f8f9fa, #e9ecef);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 280px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+.leader-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+.leader-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.leader-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.leader-card:hover .leader-image {
+  transform: scale(1.1);
+}
+.leader-info {
+  padding: 20px;
+} 

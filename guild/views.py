@@ -3,8 +3,11 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse, Http404
 from django.contrib import messages
-from .forms import SignupForm, LoginForm, ReviewForm
-from .models import Event, GuildLeader, Campaign, Member, GuildActivity, Review
+from .forms import SignupForm, LoginForm, ReviewForm, VolunteerRequestForm
+from .models import Event, GuildLeader, Campaign, Member, GuildActivity, Review, VolunteerRequest
+from django.db.models import Q
+from django.urls import reverse
+from django.views.decorators.http import require_POST
 
 def signup_view(request):
     try:
@@ -110,3 +113,57 @@ def submit_review(request):
     except Exception as e:
         return JsonResponse({'error': f"An error occurred: {e}"}, status=500)
     return JsonResponse({'error': 'Invalid request method'}, status=400)
+
+def search_view(request):
+    query = request.GET.get('q', '').strip()
+    results = []
+    if query:
+        # Search across multiple models and fields
+        event_results = Event.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        leader_results = GuildLeader.objects.filter(Q(name__icontains=query) | Q(title__icontains=query) | Q(description__icontains=query))
+        campaign_results = Campaign.objects.filter(Q(title__icontains=query) | Q(description__icontains=query))
+        member_results = Member.objects.filter(Q(name__icontains=query) | Q(email__icontains=query))
+        activity_results = GuildActivity.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        # Combine results into a single list with a type label
+        results = list(event_results) + list(leader_results) + list(campaign_results) + list(member_results) + list(activity_results)
+    return render(request, 'guild/search_results.html', {'results': results, 'query': query})
+
+@login_required
+def dashboard_view(request):
+    context = {
+        'event_count': Event.objects.count(),
+        'campaign_count': Campaign.objects.count(),
+        'member_count': Member.objects.count(),
+        'review_count': Review.objects.count(),
+        'activity_count': GuildActivity.objects.count(),
+    }
+    return render(request, 'guild/dashboard.html', context)
+
+@login_required
+@require_POST
+def like_review(request, review_id):
+    review = get_object_or_404(Review, id=review_id)
+    user = request.user
+    if user in review.likes.all():
+        review.likes.remove(user)
+    else:
+        review.likes.add(user)
+    return redirect('get_involved')
+
+@login_required
+def volunteer_view(request):
+    user = request.user
+    if request.method == 'POST':
+        form = VolunteerRequestForm(request.POST)
+        if form.is_valid():
+            VolunteerRequest.objects.create(
+                user=user,
+                message=form.cleaned_data['message'],
+                status='pending'
+            )
+            messages.success(request, 'Your volunteer request has been submitted!')
+            return redirect('volunteer')
+    else:
+        form = VolunteerRequestForm()
+    requests = VolunteerRequest.objects.filter(user=user).order_by('-created_at')
+    return render(request, 'guild/volunteer.html', {'form': form, 'requests': requests})

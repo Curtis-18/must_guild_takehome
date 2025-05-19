@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import AuthenticationForm
+from .models import VolunteerRequest
 
 class LoginForm(AuthenticationForm):
     username = forms.CharField(
@@ -45,3 +46,15 @@ class ReviewForm(forms.Form):
         }),
         error_messages={'required': 'Review content cannot be empty.'}
     )
+
+class VolunteerRequestForm(forms.ModelForm):
+    class Meta:
+        model = VolunteerRequest
+        fields = ['message']
+        widgets = {
+            'message': forms.Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Why do you want to volunteer? (optional)',
+                'rows': 3,
+            })
+        }

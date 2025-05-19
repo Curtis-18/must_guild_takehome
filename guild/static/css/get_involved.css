@@ -1,0 +1,282 @@
+/* Modern Get Involved Page Styles */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    border: none !important;
+}
+.involvement-hero, .involvement-cards, .review-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+.involvement-hero {
+    color: #2c0e57;
+    text-align: center;
+    margin-top: 1.5rem;
+}
+.involvement-hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #198754;
+}
+.involvement-hero p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+.wave-divider svg {
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin-top: -1px;
+}
+.section-header {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #2c0e57;
+    font-weight: 700;
+}
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+.involvement-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+    width: 260px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.involvement-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 24px rgba(44, 14, 87, 0.13);
+}
+.card-icon {
+    font-size: 2rem;
+    color: #198754;
+    background: #eaf3ff;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 4px rgba(44, 14, 87, 0.04);
+}
+.card-content h3 {
+    color: #2c0e57;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+.card-content p {
+    color: #555;
+    font-size: 0.98rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+.card-btn {
+    background: #198754;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.98rem;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px rgba(44, 14, 87, 0.04);
+}
+.card-btn:hover {
+    background: #145a32;
+    color: #fff;
+}
+.review-form {
+    background: #f8f9fa !important;
+    border-radius: 8px;
+    padding: 1rem 0.75rem;
+    box-shadow: 0 1px 6px rgba(44, 14, 87, 0.04);
+    margin-bottom: 1.5rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 4px solid #198754;
+}
+.review-form h3 {
+    color: #2c0e57;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.form-group label {
+    font-weight: 600;
+    color: #198754;
+    font-size: 0.98rem;
+}
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+    font-size: 0.98rem;
+}
+.submit-btn {
+    background: #198754;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
+    font-size: 0.98rem;
+}
+.submit-btn:hover {
+    background: #145a32;
+    color: #fff;
+}
+.error-message p {
+    color: #e74c3c;
+    font-size: 0.95rem;
+    margin: 0 0 8px 0;
+}
+.reviews-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 100%;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin: 0 auto 1rem auto;
+}
+.review-card {
+    min-width: 200px;
+    max-width: 220px;
+    flex: 0 0 auto;
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 1px 6px rgba(44, 14, 87, 0.04);
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-left: 3px solid #198754;
+    margin-bottom: 0;
+}
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+.avatar {
+    background: #198754;
+    color: #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.user-details .username {
+    font-weight: 600;
+    color: #2c0e57;
+    font-size: 0.98rem;
+}
+.user-details .date {
+    font-size: 0.92rem;
+    color: #888;
+}
+.review-card .content {
+    color: #333;
+    font-size: 0.98rem;
+    line-height: 1.4;
+}
+.no-reviews {
+    text-align: center;
+    color: #888;
+    margin-top: 16px;
+}
+.cta-section {
+    background: linear-gradient(120deg, #2c0e57 0%, #198754 100%);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem 1.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 24px rgba(44, 14, 87, 0.13);
+}
+.cta-section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+.cta-section p {
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 1rem auto;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+.cta-btn {
+    background: #198754;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 28px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 1px 4px rgba(44, 14, 87, 0.04);
+}
+.cta-btn:hover {
+    background: #145a32;
+    color: #fff;
+}
+@media (max-width: 991px) {
+    .cards-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .involvement-card {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .involvement-hero, .cta-section {
+        padding: 1rem 0.5rem 0.75rem 0.5rem;
+    }
+    .involvement-cards, .review-section {
+        padding: 1rem 0.25rem 0.5rem 0.25rem;
+    }
+    .section-header {
+        font-size: 1.1rem;
+    }
+}
+@media (max-width: 600px) {
+    .review-card {
+        min-width: 140px;
+        max-width: 160px;
+        padding: 6px 6px;
+    }
+} 

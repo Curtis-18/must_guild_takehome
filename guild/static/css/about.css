@@ -1,0 +1,187 @@
+/* Modernized About Page Styles */
+body {
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+}
+.about-hero {
+    background: linear-gradient(120deg, #3498db 0%, #2ecc71 100%);
+    color: #fff;
+    text-align: center;
+    padding: 90px 20px 60px 20px;
+    border-radius: 24px;
+    margin-bottom: 48px;
+    box-shadow: 0 8px 32px rgba(52, 152, 219, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+.about-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+}
+.about-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+    opacity: 0.95;
+}
+.about-content {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+.about-content h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+.about-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+.university-section {
+    background: #fff;
+    padding: 48px 24px 32px 24px;
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(44, 14, 87, 0.07);
+    margin-bottom: 40px;
+}
+.university-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: #2c0e57;
+    font-weight: 700;
+}
+.university-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+}
+.university-section .col {
+    flex: 1 1 300px;
+    min-width: 280px;
+    max-width: 370px;
+    margin-bottom: 24px;
+}
+.university-section .card {
+    background: linear-gradient(120deg, #f8f9fa 60%, #e3fcec 100%);
+    border-radius: 18px;
+    padding: 32px 24px;
+    box-shadow: 0 2px 16px rgba(44, 14, 87, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    height: 100%;
+}
+.university-section .card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(44, 14, 87, 0.13);
+}
+.university-section h3 {
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+.university-section ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+.university-section li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 1rem;
+}
+.university-section .card p, 
+.university-section .card ul, 
+.university-section .card li {
+    color: #333;
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+@media (max-width: 991px) {
+    .university-section .row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .university-section .col {
+        max-width: 100%;
+    }
+}
+.structure-section {
+    background: #f9f9f9;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+}
+.structure-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+.structure-section .leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.structure-section .leadership-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+}
+.structure-section .leadership-card:hover {
+    transform: translateY(-5px);
+}
+.structure-section .leadership-icon {
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 15px;
+}
+.structure-section h3 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.structure-section p {
+    color: #666;
+    font-size: 1rem;
+}
+.achievements-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+.achievements-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+.achievements-section .timeline {
+    position: relative;
+    max-width: 900px;
+} 

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Volunteer - Students Guild{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 600px;">
+    <h2 class="mb-4" style="color:#198754;">Volunteer with the Guild</h2>
+    <form method="post" class="mb-4 p-3 bg-light rounded shadow-sm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Submit Volunteer Request</button>
+    </form>
+    <h4 class="mt-5 mb-3" style="color:#2c0e57;">Your Volunteer Requests</h4>
+    {% if requests %}
+    <table class="table table-bordered table-sm bg-white rounded">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Message</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for req in requests %}
+            <tr>
+                <td>{{ req.created_at|date:"M d, Y H:i" }}</td>
+                <td>{{ req.message|default:'—' }}</td>
+                <td>
+                    {% if req.status == 'pending' %}
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    {% elif req.status == 'approved' %}
+                        <span class="badge bg-success">Approved</span>
+                    {% else %}
+                        <span class="badge bg-danger">Rejected</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p class="text-muted">You have not submitted any volunteer requests yet.</p>
+    {% endif %}
+</div>
+{% endblock %} 
