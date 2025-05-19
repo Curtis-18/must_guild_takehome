@@ -1,14 +1,25 @@
-# Must Guild Project
+# MUST Students Guild Web Application
 
 ## Description
 **Must Guild** is a Django-based web application for MUST guild  designed to facilitate community engagement and collaboration within the guild. The platform provides features such as user authentication, event management, reviews, and member contributions. It aims to enhance communication and participation among members of the guild.
 
 ## Features
-- User authentication (Sign up, Login, Logout)
-- Event management (View and participate in events)
-- Campaigns and activities
-- Member reviews and feedback
-- Guild leadership and structure representation
+- Modern, responsive UI with consistent styling across all pages
+- User authentication (sign up, login, logout)
+- Events, campaigns, and activities management
+- Reviews: users can leave reviews, like reviews, and see review counts
+- **Volunteer System:**
+  - Users can submit volunteer requests from the Get Involved page
+  - Users see the status of their requests (pending, approved, rejected)
+  - Admin can approve or reject volunteer requests in the Django admin panel
+- **Notifications** (coming soon):
+  - Users will receive notifications for volunteer request status and other important actions
+- **Advanced Search & Filter** (coming soon):
+  - Search and filter events, campaigns, members, and reviews with advanced options
+- **Q&A Section** (coming soon):
+  - Users can post questions and answers, upvote, and mark as solved
+- Dashboard with analytics for logged-in users
+- Newsletter and social media links in the footer
 
 ## Project Structure
 - **guild**: Contains the core app for managing events, campaigns, reviews, and guild members.
@@ -46,35 +57,39 @@ The admin plays a crucial role in managing the application and ensuring smooth o
    - Access the Django admin panel to oversee all models and data.
    - Use search and filtering options to efficiently manage records.
 
+## Setup Instructions
 
-## Installation
-Follow these steps to set up the project locally:
+1. **Clone the repository**
+2. **Install dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Apply migrations:**
+   ```bash
+   python manage.py migrate
+   ```
+4. **Create a superuser (for admin access):**
+   ```bash
+   python manage.py createsuperuser
+   ```
+5. **Run the development server:**
+   ```bash
+   python manage.py runserver
+   ```
+6. **Access the site:**
+   - Home: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+   - Admin: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/)
 
-```bash
-# Clone the repository
-git clone https://github.com/Curtis-18/must_guild_takehome.git
+## Volunteer Feature Usage
+- Go to the **Get Involved** page and click **Volunteer Now**
+- Fill out the volunteer form and submit
+- View your request status on the Volunteer page
+- Admins can approve/reject requests in the admin panel
 
-# Navigate to the project directory
-cd must_guild_takehome
-
-# Create and activate a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Apply migrations
-python manage.py migrate
-
-# Run the development server
-python manage.py runserver
-```
-
-## Usage
-1. Start the development server using `python manage.py runserver`.
-2. Open your browser and navigate to `http://127.0.0.1:8000/`.
-3. Sign up or log in to access features like viewing events, leaving reviews, and more.
+## Planned Features
+- In-app notifications for important actions
+- Advanced search and filtering for all content
+- Q&A section for student questions and answers
 
 ## Implementation Details
 
@@ -96,14 +111,10 @@ python manage.py runserver
 - **Testing**: The `tests.py` file is available for writing unit tests to ensure code reliability and correctness.
 
 ## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Commit your changes and push them to your fork.
-4. Submit a pull request with a detailed description of your changes.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+[MIT](LICENSE)
 
 ## Contact
 For any inquiries or support, please contact:
