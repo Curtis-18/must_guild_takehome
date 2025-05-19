@@ -1,7 +1,7 @@
 # Must Guild Project
 
 ## Description
-**Must Guild** is a Django-based web application designed to facilitate community engagement and collaboration within a guild. The platform provides features such as user authentication, event management, reviews, and member contributions. It aims to enhance communication and participation among members of the guild.
+**Must Guild** is a Django-based web application for MUST guild  designed to facilitate community engagement and collaboration within the guild. The platform provides features such as user authentication, event management, reviews, and member contributions. It aims to enhance communication and participation among members of the guild.
 
 ## Features
 - User authentication (Sign up, Login, Logout)
